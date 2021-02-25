@@ -9,10 +9,13 @@ const game = {
         (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
         return this.secretNum
     },
+    guess: null,
+    message: prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}`),
     getGuess: function(){
-      return(`Enter a guess between${this.smallestNum} and ${this.biggestNum}`);
-    }
-  }
+      return(this.message);
+      
+  },
+}
 
   console.log(game)
   console.log(game.getGuess)
