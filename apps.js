@@ -7,6 +7,11 @@ const game = {
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
+  },
+  message: prompt(`Enter a guess between ${this.smallestNumber} and ${this.biggestNumber}`),
+  getGuesses: function(){
+    let guess = this.message;
+    return guess;
   }
 }
 
