@@ -27,9 +27,10 @@ const game = {
       return guess;
     },
     //declare and define lastGuess
-    lastGuess: this.prevGuesses[this.prevGuesses.length - 1],
+    
 
     resetRange: function () {
+      let lastGuess = this.prevGuesses[this.prevGuesses.length - 1];
       if (this.lastGuess > this.secretNum) {
         this.biggestNum = this.prevGuesses[this.prevGuesses.length - 1];
       } else {
@@ -38,7 +39,7 @@ const game = {
     },
     render: function () {
       let msg;
-      
+      let lastGuess = this.prevGuesses[this.prevGuesses.length - 1];
       if ( this.lastGuess === this.secretNum) {
         msg = `Congrats! You guessed the number in ${this.prevGuesses.length} guesses`;
       }
