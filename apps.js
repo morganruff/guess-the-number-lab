@@ -9,7 +9,7 @@ const game = {
     this.secretNum = Math.floor(Math.random() * 
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
       do {
-        // 
+        // call all these functions into action when function play is initialized 
         this.prevGuesses.push(this.getGuess());
         this.resetRange();
         this.render();
@@ -30,19 +30,20 @@ const game = {
     
 
     resetRange: function () {
+      //declare local variable lastGuess
       let lastGuess = this.prevGuesses[this.prevGuesses.length - 1];
       if (lastGuess > this.secretNum) {
         this.biggestNum = lastGuess;
       } 
       else {
-        this.smallestNum = lastGuess
+        this.smallestNum = lastGuess;
       }
     },
     render: function () {
       let msg;
       let lastGuess = this.prevGuesses[this.prevGuesses.length - 1];
-      if ( lastGuess === this.secretNum) {
-        msg = `Congrats! You guessed the number in ${this.prevGuesses.length} guesses`;
+      if (lastGuess === this.secretNum) {
+        msg = `Congratulations! You guessed the number in ${this.prevGuesses.length} guesses`;
       }
       else if (lastGuess > this.secretNum) {
         msg = `Your guess is too high`;
