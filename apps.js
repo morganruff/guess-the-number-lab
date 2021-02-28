@@ -31,19 +31,20 @@ const game = {
 
     resetRange: function () {
       let lastGuess = this.prevGuesses[this.prevGuesses.length - 1];
-      if (this.lastGuess > this.secretNum) {
-        this.biggestNum = this.prevGuesses[this.prevGuesses.length - 1];
-      } else {
-        this.smallestNum = this.prevGuesses[this.prevGuesses.length - 1]
+      if (lastGuess > this.secretNum) {
+        this.biggestNum = lastGuess;
+      } 
+      else {
+        this.smallestNum = lastGuess
       }
     },
     render: function () {
       let msg;
       let lastGuess = this.prevGuesses[this.prevGuesses.length - 1];
-      if ( this.lastGuess === this.secretNum) {
+      if ( lastGuess === this.secretNum) {
         msg = `Congrats! You guessed the number in ${this.prevGuesses.length} guesses`;
       }
-      else if (this.lastGuess > this.secretNum) {
+      else if (lastGuess > this.secretNum) {
         msg = `Your guess is too high`;
       }
       else {
